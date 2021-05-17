@@ -2,13 +2,59 @@
 
 require_once("Transaction.php");
 if (!$_FILES['uploadedfile']) {
-	echo "Cryptaxes";
-	
-	echo '<form enctype="multipart/form-data" action="" method="POST">
+?>
+
+<html>
+
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <!-- <img class="d-block mx-auto mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57"> -->
+	<div class="row">
+    <div class="col-2">
+    </div>
+	<div class="col">
+    <h1 class="fw-bold">Cryptaxes</h1>
+<p>This tool processes data from your Coinbase report to calculate the taxable gain</p>
+
+<form enctype="multipart/form-data" action="" method="POST">
     <input type="hidden" name="MAX_FILE_SIZE" value="30000" />
-    Upload CSV: <input name="uploadedfile" type="file" />
+	Upload your Coinbase Report (CSV format): <input name="uploadedfile" type="file" />
     <input type="submit" value="Upload" />
-</form>';
+</form>
+
+</a>
+<h3>Notes</h3>
+<ul>
+<li>FIFO method</li>
+<li>Only Coinbase Report (Coinbase website -> your user -> Reports -> Generate report)</li>
+<li>Gain is only calculated when either a currency is converted to another, or a value is sent to another wallet</li>
+<li>Your report is processed in-memory, no data is stored.</li>
+<li>You can find the source code on 
+<a href="https://github.com/mmilidoni/cryptaxes" target="_blank"><img src="img/github-logo.png" width="24" />Github</a>
+</li>
+</ul>
+
+
+    <div class="col-2">
+    </div>
+      </div>
+    </div>
+</div>
+
+
+<div class="px-4 py-5 my-5 text-right">
+  </div>
+</body>
+</html>
+
+
+	<?php
 
 } else {
 	$debug=false;
