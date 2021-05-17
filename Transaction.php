@@ -41,7 +41,7 @@ class Transaction {
 	}
 
 	function getCSV($symbol) {
-		return "\"$symbol\", \"$this->quantity\", \"$this->price\", \"$this->operation\", \"$this->datetime\", \"$this->gain\", \"$this->balance\", \"".($this->balance * $this->price)."\"\n";
+		return "$symbol,$this->quantity,$this->price,$this->operation,$this->datetime,$this->gain,$this->balance,".($this->balance * $this->price)."\n";
 	}
 }
 
